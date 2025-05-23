@@ -16,7 +16,7 @@ namespace MovieRental.Controllers
             _features = features;
         }
 
-        
+       
         [HttpPost]
         public async Task<IActionResult> PostAsync([FromBody] Rental rental)
         {

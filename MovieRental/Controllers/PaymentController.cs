@@ -4,7 +4,7 @@ using MovieRental.Interfaces.Payment;
 namespace MovieRental.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/[action]")]
     public class PaymentController : ControllerBase
     {
         private readonly IPaymentService _paymentService;
@@ -14,7 +14,7 @@ namespace MovieRental.Controllers
             _paymentService = paymentService;
         }
 
-        [HttpGet("methods")]
+        [HttpGet]
         public IActionResult GetAvailablePaymentMethods()
         {
             var methods = _paymentService.GetAvailablePaymentMethods();

@@ -1,9 +1,14 @@
 using MovieRental.Data.Context;
 using MovieRental.Extensions;
+using MovieRental.Features.Customers;
 using MovieRental.Features.Movies;
 using MovieRental.Features.Rentals;
+using MovieRental.Interfaces.Customers;
 using MovieRental.Interfaces.Movies;
+using MovieRental.Interfaces.Payment;
 using MovieRental.Interfaces.Rentals;
+using MovieRental.PaymentProviders;
+using MovieRental.Services;
 
 
 
@@ -29,6 +34,15 @@ builder.Services.AddEntityFrameworkSqlite().AddDbContext<MovieRentalDbContext>()
 
 builder.Services.AddScoped<IRentalFeatures, RentalFeatures>();
 builder.Services.AddScoped<IMovieFeatures, MovieFeatures>();
+builder.Services.AddScoped<ICustomerFeatures, CustomerFeatures>();
+
+
+builder.Services.AddScoped<IPaymentProvider, PayPalProvider>();
+builder.Services.AddScoped<IPaymentProvider, MbWayProvider>();
+builder.Services.AddScoped<IPaymentProvider, CreditCardProvider>();
+
+builder.Services.AddScoped<IPaymentService, PaymentService>();
+
 
 var app = builder.Build();
 
