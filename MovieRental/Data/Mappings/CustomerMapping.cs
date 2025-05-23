@@ -10,6 +10,11 @@ namespace MovieRental.Data.Mappings
         {
             builder.ToTable("Customers");
 
+            builder.HasKey(e => e.Id);
+
+            builder.Property(e => e.Id)
+                .ValueGeneratedOnAdd();
+
             builder.HasIndex(e => e.Email).IsUnique();
             builder.Property(e => e.Name).IsRequired().HasMaxLength(100);
             builder.Property(e => e.Email).IsRequired().HasMaxLength(150);

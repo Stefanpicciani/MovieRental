@@ -10,7 +10,10 @@ namespace MovieRental.Data.Mappings
         {
             builder.ToTable("Movies");
 
-            builder.HasKey(x => x.Id);
+            builder.HasKey(e => e.Id);
+
+            builder.Property(e => e.Id)
+                .ValueGeneratedOnAdd();
 
             builder.Property(e => e.Title)
                    .IsRequired()

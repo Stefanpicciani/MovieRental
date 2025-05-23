@@ -10,6 +10,11 @@ namespace MovieRental.Data.Mappings
         {
             builder.ToTable("Rentals");
 
+            builder.HasKey(e => e.Id);
+
+            builder.Property(e => e.Id)
+                .ValueGeneratedOnAdd();
+
             builder.HasOne(r => r.Movie)
                    .WithMany()
                    .HasForeignKey(r => r.MovieId)
