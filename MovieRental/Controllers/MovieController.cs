@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using MovieRental.Movie;
+using MovieRental.Interfaces.Movies;
+
 
 namespace MovieRental.Controllers
 {
@@ -15,16 +16,16 @@ namespace MovieRental.Controllers
             _features = features;
         }
 
-        [HttpGet]
-        public IActionResult Get()
-        {
-	        return Ok(_features.GetAll());
-        }
+        //[HttpGet]
+        //public IActionResult Get()
+        //{
+	       // return Ok(_features.GetAll());
+        //}
 
-        [HttpPost]
-        public IActionResult Post([FromBody] Movie.Movie movie)
-        {
-	        return Ok(_features.Save(movie));
-        }
+        //[HttpPost]
+        //public IActionResult Post([FromBody] Movie.Movie movie)
+        //{
+	       // return Ok(_features.Save(movie));
+        //}
     }
 }

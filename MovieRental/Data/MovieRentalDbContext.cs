@@ -1,13 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
+using MovieRental.API.Models.Rentals;
+using MovieRental.Models.Movies;
+using MovieRental.Models.Rentals;
 using System.Reflection.Metadata;
 
 namespace MovieRental.Data
 {
 	public class MovieRentalDbContext : DbContext
 	{
-		public DbSet<Movie.Movie> Movies { get; set; }
-		public DbSet<Rental.Rental> Rentals { get; set; }
+		public DbSet<Movie> Movies { get; set; }
+		public DbSet<Rental> Rentals { get; set; }
 
 		private string DbPath { get; }
 
