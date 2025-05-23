@@ -1,11 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
 using MovieRental.Interfaces.Movies;
 
-
 namespace MovieRental.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]/[action]")]
     public class MovieController : ControllerBase
     {
 
