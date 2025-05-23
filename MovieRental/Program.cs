@@ -1,4 +1,4 @@
-using MovieRental.Data;
+using MovieRental.Data.Context;
 using MovieRental.Extensions;
 using MovieRental.Features.Movies;
 using MovieRental.Features.Rentals;
